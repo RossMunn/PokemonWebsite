@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  #get 'home/index'
+  
+  # /pokemon/:id/image.png
+  resources :pokemons do
+    member do
+      get :image
+    end
+  end
+
   root 'home#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'home/contact'
+ 
 end
