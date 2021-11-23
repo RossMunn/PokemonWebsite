@@ -1,0 +1,126 @@
+
+/*font family*/
+body {
+    font-family: 'Dosis';
+    font-size: 25px;
+    background: #FFFFFF;
+}
+
+/* Grid CSS */
+
+/* Navbar */
+
+/*   border radius */
+$radius: 0.2rem;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a:link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.nav_div{
+  padding-bottom: 110px;
+}
+
+.nav {
+  position: fixed;
+  width: 100vw;
+  box-shadow: 0 0 10px #e1e5ee;
+
+  svg {
+    width: 2.5rem;
+    transition: fill 250ms ease-in;
+
+    &:hover,
+    &:focus {
+      fill: #dd2261;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 2rem;
+
+    &logo {
+      list-style: none;
+      margin-right: auto;
+      cursor: pointer;
+    }
+
+    &item {
+      list-style: none;
+      font-weight: bold;
+      position: relative;
+      padding: 1.5rem 1rem;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 0.3rem;
+        border-radius: $radius;
+        position: absolute;
+        left: 1rem;
+        bottom: 0.8rem;
+        background-color: #dd2261;
+        transition: width 50ms ease-in;
+      }
+
+      &:hover::after,
+      &:focus::after {
+        width: 80%;
+      }
+
+      &:hover ul,
+      &:focus ul {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      &drop {
+        position: absolute;
+        top: 4rem;
+        left: -1rem;
+        box-shadow: 0 0 10px #e1e5ee;
+        background-color: white;
+        border-radius: $radius;
+        width: 12rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 200ms ease-in-out;
+
+        li {
+          list-style: none;
+          padding: 0.5rem 1rem;
+          border-radius: $radius;
+          transition: background-color 200ms ease-in-out;
+
+          &:hover,
+          &:focus {
+            background-color: #fce4ec;
+          }
+        }
+      }
+    }
+  }
+}
