@@ -1,30 +1,37 @@
+- if @pokemon.pokemon_type == 'grass' || @pokemon.pokemon_type == 'Grass'
+  - backtype1 = 'card_image1'
+- elsif @pokemon.pokemon_type == 'water' || @pokemon.pokemon_type == 'Water'
+  - backtype1 = 'card_image3'
+- elsif @pokemon.pokemon_type == 'Fire' || @pokemon.pokemon_type == 'fire'
+  - backtype1 = 'card_image2'
+- else
+  - backtype1 = 'card_image5'
 %p#notice= notice
 .main
-  .cards
+  .cardDesc{class: backtype1}
+   
     %p
       = image_tag @pokemon.pokemon_image
-    %p
-      %h1= @pokemon.name
-    %p
-      %strong #
-      = @pokemon.id
-    .DescBot
-    %p
+    %div.titleDesc
+      %p= @pokemon.name
+      %p= "##{@pokemon.id}"
+  .card_content
+    %p.card_textDesc
       %strong Description:
       = @pokemon.description
-    %p
+    %p.card_textDesc
       %strong Elements:
       = @pokemon.species
-    %p
+    %p.card_textDesc
       %strong Height:
       = @pokemon.height
-    %p
+    %p.card_textDesc
       %strong Weight:
       = @pokemon.weight
-    %p
+    %p.card_textDesc
       %strong Abilities:
       = @pokemon.abilities
-    %p
+    %p.card_textDesc
       %strong Egg Cycle:
       = @pokemon.egg_cycle
   / <p>

@@ -18,7 +18,7 @@ class HomeController < ApplicationController
       ContactMailer.contact_email(email, name, telephone, message).deliver_now
       flash[:notice] = I18n.t('home.request_contact.email_sent')
     end
-      redirect_to root_path
-    end
+    redirect_back fallback_location: root_url
+  end
     
 end
