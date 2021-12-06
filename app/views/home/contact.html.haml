@@ -1,16 +1,17 @@
-.container
-  %form#contact{:action => "", :method => "post"}
-    .titleH
-      %h2 Quick Contact
-    %fieldset
-      %input{:autofocus => "", :placeholder => "Your name", :required => "", :tabindex => "1", :type => "text"}/
-    %fieldset
-      %input{:placeholder => "Your Email Address", :required => "", :tabindex => "2", :type => "email"}/
-    %fieldset
-      %input{:placeholder => "Your Phone Number", :required => "", :tabindex => "3", :type => "tel"}/
-    %fieldset
-      %input{:placeholder => "Your Web Site starts with http://", :required => "", :tabindex => "4", :type => "url"}/
-    %fieldset
-      %textarea{:placeholder => "Type your Message Here....", :required => "", :tabindex => "5"}
-    %fieldset
-      %button#contact-submit{"data-submit" => "...Sending", :name => "submit", :type => "submit"} Submit
+%h1= t('.title')
+%p = t('.contact_us')
+
+= form_tag request_contact_path, method: 'post' do
+ = label_tag :name, t('.name')
+ = text_field_tag :name, '', title: t('.enter_name'), size: 50
+ 
+ = label_tag :email, t('.email')
+ = email_field_tag :email, '', title: t('.enter_email')
+ 
+ = label_tag :telephone, t('.telephone')
+ = telephone_field_tag :telephone, '', title: t('.enter_telephone')
+ 
+ = label_tag :message, t('.message')
+ = text_field_tag :message, '', title: t('.enter_message'), size: 100
+ 
+ = submit_tag t('.submit')
