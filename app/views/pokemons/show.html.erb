@@ -1,13 +1,48 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Image:</strong><br>
+  <%= image_tag @pokemon.pokemon_image %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @pokemon.name %>
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @pokemon.image %>
+  <strong>description:</strong>
+  <%= @pokemon.description %>
+</p>
+
+<p>
+  <strong>species:</strong>
+  <%= @pokemon.species %>
+</p>
+
+<p>
+  <strong>height:</strong>
+  <%= @pokemon.height %>
+</p>
+
+<p>
+  <strong>weight:</strong>
+  <%= @pokemon.weight %>
+</p>
+
+<p>
+  <strong>abilities:</strong>
+  <%= @pokemon.abilities %>
+</p>
+
+<p>
+  <strong>egg_groups:</strong>
+  <%= @pokemon.egg_groups %>
+</p>
+
+<p>
+  <strong>egg_cycle:</strong>
+  <%= @pokemon.egg_cycle %>
 </p>
 
 <p>
@@ -15,10 +50,10 @@
   <%= @pokemon.index %>
 </p>
 
-<p>
-  <strong>Gen:</strong>
-  <%= @pokemon.gen %>
-</p>
+<!--<p>-->
+<!--  <strong>pokemon_type:</strong>-->
+  <%#= @pokemon.pokemon_type %>
+<!--</p>-->
 
-<%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
-<%= link_to 'Back', pokemons_path %>
+<!--<%#= link_to 'Edit', edit_pokemon_path(@pokemon) %> |-->
+<%= link_to 'Back', root_path %>

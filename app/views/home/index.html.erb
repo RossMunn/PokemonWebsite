@@ -1,106 +1,35 @@
 <div class="main">
   <ul class="cards">
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image1"><% pokemon = Pokemon.all[0] %>
-        <%= image_tag url_for(:controller => "pokemons", :action => "image", :id => pokemon.id) %></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
+    <% @pokemons.each do |pokemon| %>
+      <li class="cards_item">
+        <div class="card">
+          <% if pokemon.pokemon_type == 'grass' || pokemon.pokemon_type == 'Grass'  %>
+            <% backtype1 = 'card_image1' %>
+          <% elsif pokemon.pokemon_type == 'water' || pokemon.pokemon_type == 'Water' %>
+              <% backtype1 = 'card_image3' %>
+          <% elsif pokemon.pokemon_type == 'Electric' || pokemon.pokemon_type == 'electric' %>
+            <% backtype1 = 'card_image4' %>
+          <% elsif pokemon.pokemon_type == 'Fire' || pokemon.pokemon_type == 'fire' %>
+            <% backtype1 = 'card_image2' %>
+          <% else %>
+            <% backtype1 = 'card_image5' %>
+          <% end %>
+          <div class="<%= backtype1  %>"><% pokemon %>
+            <% if pokemon.pokemon_image.present? %>
+              <%= link_to pokemon_path(pokemon) do %>
+                <%= image_tag pokemon.pokemon_image, class: "card-img-top" %>
+              <% end %>
+            <% end %>
+            <%#= image_tag url_for(pokemon.image) %>
+            <%#= image_tag url_for(:controller => "pokemons", :action => "image", :id => pokemon.id) %>
+          </div>
+          <div class="card_content">
+            <h2 class="card_title"><%= pokemon.name %></h2>
+            <p class="card_text"><%= pokemon.description %></p>
+            <button class="btn card_btn"><%= link_to 'Read More', pokemon_path(pokemon) %></button>
+          </div>
         </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image1"><% pokemon = Pokemon.all[1] %>
-        <%= image_tag url_for(:controller => "pokemons", :action => "image", :id => pokemon.id) %></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image1"><% pokemon = Pokemon.all[2] %>
-        <%= image_tag url_for(:controller => "pokemons", :action => "image", :id => pokemon.id) %></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image2"><% pokemon = Pokemon.all[3] %>
-        <%= image_tag url_for(:controller => "pokemons", :action => "image", :id => pokemon.id) %></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image2"><% pokemon = Pokemon.all[4] %>
-        <%= image_tag url_for(:controller => "pokemons", :action => "image", :id => pokemon.id) %></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image2"><% pokemon = Pokemon.all[5] %>
-        <%= image_tag url_for(:controller => "pokemons", :action => "image", :id => pokemon.id) %></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
-        </div>
-      </div>
-    </li>
-
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image3"><% pokemon = Pokemon.all[6] %>
-        <%= image_tag url_for(:controller => "pokemons", :action => "image", :id => pokemon.id) %></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
-        </div>
-      </div>
-    </li>
-
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image3"><% pokemon = Pokemon.all[7] %>
-        <%= image_tag url_for(:controller => "pokemons", :action => "image", :id => pokemon.id) %></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
-        </div>
-      </div>
-    </li>
-
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image3"><% pokemon = Pokemon.all[8] %>
-        <%= image_tag url_for(:controller => "pokemons", :action => "image", :id => pokemon.id) %></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
-        </div>
-      </div>
-    </li>
+      </li>
+    <% end %>
   </ul>
 </div>
