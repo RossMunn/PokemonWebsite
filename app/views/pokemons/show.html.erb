@@ -1,14 +1,23 @@
 <p id="notice"><%= notice %></p>
 
+<div class="main">
+  <div class="cards">
+  
 <p>
-  <strong>Image:</strong><br>
   <%= image_tag @pokemon.pokemon_image %>
 </p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @pokemon.name %>
+  <h1><%= @pokemon.name %></h1>
 </p>
+  
+
+  <p>
+  <strong>#</strong>
+  <%= @pokemon.id %>
+</p>
+
+<div class="DescBot"
 
 <p>
   <strong>description:</strong>
@@ -36,24 +45,21 @@
 </p>
 
 <p>
-  <strong>egg_groups:</strong>
-  <%= @pokemon.egg_groups %>
-</p>
-
-<p>
   <strong>egg_cycle:</strong>
   <%= @pokemon.egg_cycle %>
 </p>
 
-<p>
-  <strong>Index:</strong>
-  <%= @pokemon.index %>
-</p>
+</div>
 
 <!--<p>-->
 <!--  <strong>pokemon_type:</strong>-->
   <%#= @pokemon.pokemon_type %>
 <!--</p>-->
 
+</div>
+</div>
+
 <!--<%#= link_to 'Edit', edit_pokemon_path(@pokemon) %> |-->
 <%= link_to 'Back', root_path %>
+
+
