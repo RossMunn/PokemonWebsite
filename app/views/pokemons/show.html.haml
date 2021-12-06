@@ -1,0 +1,32 @@
+%p#notice= notice
+.main
+  .cards
+    %p
+      = image_tag @pokemon.pokemon_image
+    %p
+      %h1= @pokemon.name
+    %p
+      %strong #
+      = @pokemon.id
+    .DescBot
+    %p
+      %strong Description:
+      = @pokemon.description
+    %p
+      %strong Elements:
+      = @pokemon.species
+    %p
+      %strong Height:
+      = @pokemon.height
+    %p
+      %strong Weight:
+      = @pokemon.weight
+    %p
+      %strong Abilities:
+      = @pokemon.abilities
+    %p
+      %strong Egg Cycle:
+      = @pokemon.egg_cycle
+  / <p>
+  / <strong>pokemon_type:</strong>
+  / </p>

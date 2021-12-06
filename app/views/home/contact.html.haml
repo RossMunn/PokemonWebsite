@@ -1,0 +1,16 @@
+.container
+  %form#contact{:action => "", :method => "post"}
+    .titleH
+      %h2 Quick Contact
+    %fieldset
+      %input{:autofocus => "", :placeholder => "Your name", :required => "", :tabindex => "1", :type => "text"}/
+    %fieldset
+      %input{:placeholder => "Your Email Address", :required => "", :tabindex => "2", :type => "email"}/
+    %fieldset
+      %input{:placeholder => "Your Phone Number", :required => "", :tabindex => "3", :type => "tel"}/
+    %fieldset
+      %input{:placeholder => "Your Web Site starts with http://", :required => "", :tabindex => "4", :type => "url"}/
+    %fieldset
+      %textarea{:placeholder => "Type your Message Here....", :required => "", :tabindex => "5"}
+    %fieldset
+      %button#contact-submit{"data-submit" => "...Sending", :name => "submit", :type => "submit"} Submit
