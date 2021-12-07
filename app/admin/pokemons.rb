@@ -1,3 +1,5 @@
+#Pokemon registration tables
+
 ActiveAdmin.register Pokemon do
 
   permit_params :name, :image, :index, :gen, :species, :height, :weight, :abilities, :gender, :egg_cycle, :pokemon_type, :description, :pokemon_image

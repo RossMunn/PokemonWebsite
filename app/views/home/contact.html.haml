@@ -2,6 +2,7 @@
   = form_tag request_contact_path, method: 'post', id:"contact" do
     .titleH
       %h2 Quick Contact
+    %script
     %fieldset
       =text_field_tag :name,'',autofocus: "", placeholder: "Your Name", required: "", tabindex: "1"
     %fieldset

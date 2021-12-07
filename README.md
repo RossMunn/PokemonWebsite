@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ruby-2.7.4
+Rails 6.1.4.1
 
-Things you may want to cover:
+To start run these commands in the terminal
 
-* Ruby version
+*rails db:migrate
+*rails rake db:seed
 
-* System dependencies
+Now open localhost:3000/admin
 
-* Configuration
+The website will be clear of data until it is filled out in the admin/pokemon section
+login details are activeadmin default
 
-* Database creation
+*admin@example.com
+*Password: password
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+once in the admin pokemons can be added by filling out the form and hitting create. They can be updated at anytime and is currently limited to 3 elements fire, water and grass that must be filled in the type section for smart background colours. for multiple elements use species.

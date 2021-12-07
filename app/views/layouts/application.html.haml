@@ -8,12 +8,15 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{:crossorigin => "anonymous", :integrity => "sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=", :src => "https://code.jquery.com/jquery-3.6.0.js"}
     %link{:href => "https://fonts.googleapis.com/css?family=Dosis", :rel => "stylesheet"}/
   %body
+
     = render 'home/header'
 
     - flash.each do |key, value|
       = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
 
     = yield
+    
     = render 'home/footer'
