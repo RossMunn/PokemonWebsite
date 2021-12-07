@@ -9,11 +9,11 @@ To start run these commands in the terminal
 *rake db:seed
 *bundle install
 
--if there are any errors rake and rails assets:precompile should fix common errors 
+-if there are any errors (rake) and (rails assets:precompile) should fix common errors 
 
-Now open localhost:3000/admin
+Now open localhost:3000
 
-The website will be clear of data until it is filled out in the admin/pokemon section
+The website will be clear of data until it is filled out in the admin/pokemon section, access by using the navbar or localhost:3000/admin
 login details are activeadmin default
 
 *admin@example.com
