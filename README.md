@@ -6,7 +6,10 @@ Rails 6.1.4.1
 To start run these commands in the terminal
 
 *rails db:migrate
-*rails rake db:seed
+*rake db:seed
+*bundle install
+
+-if there are any errors rake and rails assets:precompile should fix common errors 
 
 Now open localhost:3000/admin
 
